@@ -1,0 +1,3 @@
+passwordMali = 1234
+passwordGera = 4567
+passwordMaui = 9874
