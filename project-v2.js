@@ -178,24 +178,24 @@ function ingresarMontoCuenta(){
     sectionRetirarMonto.style.display = 'none'
 
     ingresosDeLaCuenta.innerHTML = ('$'+saldoArray)
-
-    botonAñadirSaldo.addEventListener('click', (e) => {
-        saldoAñadido = prompt('Ingresa el saldo que deseas añadir a tu cuenta:')
-        saldoArray = Number(saldoAñadido) + cuentas[numEnArray].saldo
-        console.log(saldoArray)
-
-        if(Number(saldoArray) <= 990){
-            cuentas[numEnArray].saldo = cuentas[numEnArray].saldo + Number(saldoAñadido)
-            ingresosDeLaCuenta.innerHTML = ('$'+saldoArray)
-        }else{
-            alert('No puedes tener más de $990 pesos en tu cuenta!')
-        }
-    })
-
-    botonIngresarMontoRegresar.addEventListener('click', (e) => {
-        multiplesOpciones()
-    })
 }
+
+botonAñadirSaldo.addEventListener('click', (e) => {
+    saldoAñadido = prompt('Ingresa el saldo que deseas añadir a tu cuenta:')
+    saldoArray = Number(saldoAñadido) + cuentas[numEnArray].saldo
+    console.log(saldoArray)
+
+    if(Number(saldoArray) <= 990){
+        cuentas[numEnArray].saldo = cuentas[numEnArray].saldo + Number(saldoAñadido)
+        ingresosDeLaCuenta.innerHTML = ('$'+saldoArray)
+    }else{
+        alert('No puedes tener más de $990 pesos en tu cuenta!')
+    }
+})
+
+botonIngresarMontoRegresar.addEventListener('click', (e) => {
+    multiplesOpciones()
+})
 
 function retirarMontoCuenta(){
     sectionRetirarMonto.style.display = 'block'
@@ -207,23 +207,23 @@ function retirarMontoCuenta(){
     sectionIngresarMonto.style.display = 'none'
 
     retirosDeLaCuenta.innerHTML = ('$'+saldoArray)
-
-    botonRetirarSaldo.addEventListener('click', (e) => {
-        saldoRetirado = prompt('Ingresa el saldo que deseas retirar de tu cuenta:')
-        saldoArray = cuentas[numEnArray].saldo - Number(saldoRetirado)
-        console.log(saldoArray)
-
-        if(Number(saldoArray) >= 10){
-            cuentas[numEnArray].saldo = cuentas[numEnArray].saldo - Number(saldoRetirado)
-            retirosDeLaCuenta.innerHTML = ('$'+saldoArray)
-        }else{
-            alert('No puedes tener menos de $10 pesos en tu cuenta!')
-        }
-    })
-
-    botonRetirarMontoRegresar.addEventListener('click', (e) => {
-        multiplesOpciones()
-    })
 }
+
+botonRetirarSaldo.addEventListener('click', (e) => {
+    saldoRetirado = prompt('Ingresa el saldo que deseas retirar de tu cuenta:')
+    saldoArray = cuentas[numEnArray].saldo - Number(saldoRetirado)
+    console.log(saldoArray)
+
+    if(Number(saldoArray) >= 10){
+        cuentas[numEnArray].saldo = cuentas[numEnArray].saldo - Number(saldoRetirado)
+        retirosDeLaCuenta.innerHTML = ('$'+saldoArray)
+    }else{
+        alert('No puedes tener menos de $10 pesos en tu cuenta!')
+    }
+})
+
+botonRetirarMontoRegresar.addEventListener('click', (e) => {
+    multiplesOpciones()
+})
 
 window.addEventListener('load', bienvenida())
